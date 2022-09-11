@@ -1,0 +1,39 @@
+.mainContainer{
+    margin: 20px;
+    text-align: left;
+}
+
+.textData{
+    display: flex;
+}
+
+.mainContainer h6{
+    margin-bottom: 40px;
+}
+
+.textSide{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin-right: 100px;
+}
+
+.textSide textarea{
+    padding: 10px;
+    min-height: 200px;
+}
+
+.textTimeAndNumber{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.textTimeAndNumber div{
+    margin-bottom: 10px;
+}
+
+#button{
+    margin-left: 10px;
+    margin-top: 10px;
+}
