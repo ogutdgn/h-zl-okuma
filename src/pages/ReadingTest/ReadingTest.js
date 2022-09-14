@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./ReadingTest.css";
 import Layout from '../../components/Layout/Layout';
 import { TextField, Button } from '@mui/material';
@@ -12,6 +12,10 @@ const ReadingTest = () => {
 
     const [textAreaValue, setTextAreaValue] = useState(currentParagraph);
     const [wordsInParagraph, setWordsInParagraph] = useState(0);
+
+    useEffect(() => {
+        setWordsInParagraph(currentParagraph.split(" "));
+      }, [currentParagraph])
 
     const textFormSubmitted = (e) => {
         e.preventDefault();
@@ -69,21 +73,6 @@ const ReadingTest = () => {
                         />
                     </div>
                     <div className="textFieldsDownSide">
-                        <TextField
-                            id="outlined-number"
-                            label="Metindeki Kelime Sayısı"
-                            value={wordsInParagraph}
-                            type="number"
-                            InputProps={{
-                                inputProps: { 
-                                    max: 100, min: 0 
-                                }
-                            }}
-                            sx={{ m: 1, width: '25ch' }}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                        />
                         <Button style={{width: "215px", height: "50px", backgroundColor: "green"}} 
                         variant="contained" 
                         id="button"
