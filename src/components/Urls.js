@@ -23,12 +23,12 @@ const routes = [
       name: "Ana Sayfa",
     },
     {
-      path: "/okumaegzersizi",
-      name: "Okuma Egzersizi",
-    },
-    {
       path: "/okumatesti",
       name: "Okuma Testi",
+    },
+    {
+      path: "/okumaegzersizi",
+      name: "Okuma Egzersizi",
     },
   ];
 

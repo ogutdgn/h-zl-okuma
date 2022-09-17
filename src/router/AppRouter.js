@@ -25,8 +25,8 @@ const AppRouter = () => {
           <ResponseFunc/>
             <Routes>
                 <Route path="/anasayfa" element={<Home/>} />
-                <Route path="/okumatesti" element={<ReadingExercise/>} />
-                <Route path="/okumaegzersizi" element={<ReadingTest/>} />
+                <Route path="/okumatesti" element={<ReadingTest/>} />
+                <Route path="/okumaegzersizi" element={<ReadingExercise/>} />
             </Routes>
         </BrowserRouter>
     </div>

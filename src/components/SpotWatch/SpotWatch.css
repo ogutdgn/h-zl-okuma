@@ -1,0 +1,27 @@
+.stopwatch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.startBtn{
+    text-align: center;
+}
+
+.stopResetBtn Button{
+    margin-right: 10px;
+}
+
+.resumeFinishBtn Button{
+    margin-right: 10px;
+}
+
+.timeDisplay{
+    display: flex;
+}

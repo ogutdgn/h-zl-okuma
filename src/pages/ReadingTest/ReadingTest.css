@@ -18,12 +18,16 @@
     margin-right: 100px;
 }
 
+.textSide Button{
+    
+}
+
 .textSide textarea{
     padding: 10px;
     min-height: 200px;
 }
 
-.textTimeAndNumber{
+.spotWatchMain{
     display: flex;
     flex-direction: column;
     margin-top: 60px;

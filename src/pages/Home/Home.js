@@ -6,17 +6,15 @@ import { useParagraphStore } from '../../store/useParagraphStore';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const { currentParagraph, changeParagraphFunc} = useParagraphStore();
+  const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph } = useParagraphStore();
 
   const navigate = useNavigate();
 
   const [textAreaValue, setTextAreaValue] = useState(currentParagraph);
-  const [wordsInParagraph, setWordsInParagraph] = useState([]);
 
   useEffect(() => {
-    setWordsInParagraph(currentParagraph.split(" "));
-  }, [currentParagraph])
-  
+    setWordsInParagraph(currentParagraph);
+  }, [setWordsInParagraph, currentParagraph])
 
   const textFormSubmitted = (e) => {
       e.preventDefault();
@@ -24,8 +22,8 @@ const Home = () => {
   }
 
   const handleTextAreaChange = (e) => {
-      setTextAreaValue(e.target.value);
-      setWordsInParagraph(e.target.value.split(" ")); 
+    setTextAreaValue(e.target.value);
+    setWordsInParagraph(e.target.value);
   }
 
   return (
@@ -45,7 +43,6 @@ const Home = () => {
                       <Button style={{width: "215px", height: "50px", backgroundColor: "green"}} 
                       variant="contained" 
                       id="button"
-                      //type="submit"
                       onClick={(e) => {textFormSubmitted(e); navigate("/okumaegzersizi")}}
                       >
                         Okuma Egzersizi
@@ -56,7 +53,6 @@ const Home = () => {
                       <Button style={{width: "215px", height: "50px", backgroundColor: "green"}} 
                       variant="contained" 
                       id="button"
-                      //type="submit"
                       onClick={(e) => {textFormSubmitted(e); navigate("/okumatesti")}}
                       >
                         Okuma Testi
@@ -69,4 +65,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
