@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    /* width: 300px; */
     height: 200px;
 }
 
@@ -11,15 +11,21 @@
 }
 
 .startBtn{
-    text-align: center;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .stopResetBtn Button{
-    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .resumeFinishBtn Button{
-    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .timeDisplay{

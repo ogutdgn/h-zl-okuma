@@ -5,6 +5,7 @@
 
 .textData{
     display: flex;
+    justify-content: space-between;
 }
 
 .mainContainer h6{
@@ -14,23 +15,26 @@
 .textSide{
     display: flex;
     flex-direction: column;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin-right: 100px;
 }
 
-.textSide Button{
+/* .textSide Button{
     
-}
+} */
 
-.textSide textarea{
+.textSideTest textarea{
     padding: 10px;
-    min-height: 200px;
+    min-height: 100px;
+    height: 300px;
+    width: 1250px;
 }
 
 .spotWatchMain{
     display: flex;
     flex-direction: column;
     margin-top: 60px;
+    margin-right: 50px;
 }
 
 .textTimeAndNumber div{
@@ -40,4 +44,8 @@
 #button{
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.underSideText{
+    display: flex;
 }

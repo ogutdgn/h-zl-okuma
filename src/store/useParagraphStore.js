@@ -4,13 +4,14 @@ let openPageParagraph = "Bir yazıyı şekil, anlatım ve noktalama özellikleri
 
 export const useParagraphStore = create((set, get) => ({
     parsedText: "",
-    wordsInParagraph: [],
+    wordsInParagraph: (openPageParagraph.replace(/\s+/g, ' ').trim()).split(" "),
     currentParagraph: openPageParagraph,
 
     changeParagraphFunc: (newParagraph) => {
         set({ currentParagraph: newParagraph })
     },
     setWordsInParagraph: (paragraph) => {
+        //const { currentParagraph } = get();
         let { parsedText } = get();
         parsedText = paragraph.replace(/\s+/g, ' ').trim();
         //console.log(parsedText);

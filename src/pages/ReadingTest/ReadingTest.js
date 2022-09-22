@@ -33,9 +33,9 @@ const ReadingTest = () => {
             <h6><i><b>Not: </b>Sayacı başlatıp girmiş olduğunuz metini okuyun. Bitirdiğinizde dakikada kaç kelime okuduğunuzu öğrenin.</i></h6>
 
             <form className="textData">
-                <div className="textSide">
+                <div className="textSideTest">
                     <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
-                    <p>Metinde {wordsInParagraph.length} kelime var</p>
+                    <p>Metinde {wordsInParagraph.length} kelime var.</p>
                     <Button style={{width: "200px"}}
                       //{...textAreaValue !== currentParagraph ? "" : disabled}
                       variant="contained" 
@@ -46,10 +46,10 @@ const ReadingTest = () => {
                         Metini Değiştir
                     </Button>
                 </div>
-
                 <div className="spotWatchMain">
                     <SpotWatch/>
                 </div>
+
             </form>
         </div>
     </Layout>

@@ -35,7 +35,7 @@ const Home = () => {
                 <div className="textSide">
                     <label htmlFor="text">Metin Giriniz :</label>
                     <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
-                    <p>Metinde {wordsInParagraph.length} kelime var</p>
+                    <p>Metinde {wordsInParagraph.length} kelime var.</p>
                 </div>
 
                 <div className="submitButtons">
