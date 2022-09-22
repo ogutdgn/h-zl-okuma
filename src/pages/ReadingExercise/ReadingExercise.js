@@ -21,7 +21,7 @@ const ReadingExercise = () => {
       setTimeout(() => {
         console.log(wordsInParagraph[i]);
         setCurrentWord(wordsInParagraph[i]);
-      }, 100 * i);
+      }, 300 * i);
     }
   }
 
