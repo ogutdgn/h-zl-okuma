@@ -32,7 +32,7 @@ const ReadingTest = () => {
         <div className="mainContainer">
             <h6><i><b>Not: </b>Sayacı başlatıp girmiş olduğunuz metini okuyun. Bitirdiğinizde dakikada kaç kelime okuduğunuzu öğrenin.</i></h6>
 
-            <form className="textData">
+            <form className="textDataTest">
                 <div className="textSideTest">
                     <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
                     <p>Metinde {wordsInParagraph.length} kelime var.</p>
