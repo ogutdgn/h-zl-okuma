@@ -28,14 +28,7 @@ const SpotWatchBtn = (props) => {
             >
               Durdur
             </Button>
-            <Button 
-            className="stopwatch-btn stopwatch-btn-yel"
-            variant="contained"
-            style={{ width: "100px" }}
-            onClick={props.reset}
-            >
-              Sıfırla
-            </Button>
+            
           </div> : ""
         }
       </div>
@@ -58,6 +51,14 @@ const SpotWatchBtn = (props) => {
             onClick={props.finish}
             >
               Bitir
+            </Button>
+            <Button 
+            className="stopwatch-btn stopwatch-btn-yel"
+            variant="contained"
+            style={{ width: "100px" }}
+            onClick={props.reset}
+            >
+              Sıfırla
             </Button>
           </div> : ""
         }
