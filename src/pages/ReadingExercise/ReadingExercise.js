@@ -3,43 +3,36 @@ import Layout from '../../components/Layout/Layout';
 import "./ReadingExercise.css";
 import { useParagraphStore } from '../../store/useParagraphStore';
 import ReadingExerciseBtns from './ReadingExerciseBtns';
+import ExerciseSettings from './ExerciseSettings';
 
 const ReadingExercise = () => {
-  //const wordArray = ["naber", "lebit", "esad", "doan", "ğhahaha"];
 
-  const { currentParagraph, changeParagraphFunc, wordsInParagraph, setWordsInParagraph } = useParagraphStore();
+  const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute } = useParagraphStore();
   const [currentWord, setCurrentWord] = useState(wordsInParagraph[0]);
-  const [wordIndex, setWordIndex] = useState(0);
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
   useEffect(() => {
     setWordsInParagraph(currentParagraph);
-    //setCurrentWord(wordsInParagraph[0]);
   }, [setWordsInParagraph, currentParagraph])
 
 
+  let currentWordIndex = 0;
 
-  // const handleStart = () => {
-  //   for (let i = 0; i < wordsInParagraph.length; i++) {
-  //     setTimeout(() => {
-  //       setCurrentWord(wordsInParagraph[i]);
-  //     }, 100 * i);
-  //   }
-  // }
-
-  let currentWordIndex = wordIndex;
   const handleStart = () => {
-    setCurrentWord(wordsInParagraph[currentWordIndex]);
-    currentWordIndex++;
-    return setWordIndex(currentWordIndex);
+    
+    setCurrentWord(exerciseFormat[currentWordIndex]);
+    if(currentWordIndex < exerciseFormat.length){
+      currentWordIndex++;
+    }else{
+      reset();
+    }
   }
 
   const start = () => {
-    handleStart();
-    
-    setInterv(setInterval(handleStart, 100));
+    setInterv(setInterval(handleStart, 1000 / (currentWordPerMinute / 60) * currentWordNumber));
     setStatus(1);
+    clearInterval(interv);
   }
 
   const stop = () => {
@@ -49,27 +42,13 @@ const ReadingExercise = () => {
 
   const reset = () => {
     clearInterval(interv);
-    setWordIndex(0);
-    setCurrentWord(wordsInParagraph[0]);
     setStatus(0);
+    setCurrentWord(exerciseFormat[0]);
   }
 
   const resume = () => {
     start();
   }
-
-  // const startText = () => {
-  //   setInterv(setInterval(handleStart, 100))
-  // }
-
-  // wordArray.forEach((e) => {
-  //   for (let i = 0; i < wordArray.length; i++) {
-  //     setTimeout(() => {
-  //       console.log(wordArray[i]);
-  //       setCurrentWord(wordArray[i]);
-  //     }, 500 * i);
-  //   }
-  // });
 
 
   return (
@@ -79,13 +58,12 @@ const ReadingExercise = () => {
               <div className="word">
                 <p>{currentWord}</p>
               </div>
+              <ExerciseSettings/>
           </div>
           <ReadingExerciseBtns status={status} start={start} stop={stop} reset={reset} resume={resume}/>
         </div>
-        {/* <button onClick={runWords}>Go</button>
-        <button onClick={stopWords}>Stop</button> */}
     </Layout>
   )
 }
 
-export default ReadingExercise
+export default ReadingExercise;
