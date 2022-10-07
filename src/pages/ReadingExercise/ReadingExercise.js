@@ -7,7 +7,7 @@ import ExerciseSettings from './ExerciseSettings';
 
 const ReadingExercise = () => {
 
-  const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute } = useParagraphStore();
+  const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute, fontSizeofWord } = useParagraphStore();
   const [currentWord, setCurrentWord] = useState(wordsInParagraph[0]);
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
@@ -53,15 +53,15 @@ const ReadingExercise = () => {
 
   return (
     <Layout>
-        <div className="spreeder">
-          <div className="wordBox">
-              <div className="word">
-                <p>{currentWord}</p>
-              </div>
-              <ExerciseSettings/>
+      <div className="spreeder">
+        <div className="spreederBox">
+          <div className="word">
+            <p style={{ fontSize: `${fontSizeofWord}px` }}>{currentWord}</p>
           </div>
+          <ExerciseSettings/>
           <ReadingExerciseBtns status={status} start={start} stop={stop} reset={reset} resume={resume}/>
         </div>
+      </div>
     </Layout>
   )
 }

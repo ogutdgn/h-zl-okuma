@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "./ReadingTest.css";
 import Layout from '../../components/Layout/Layout';
 import { useParagraphStore } from '../../store/useParagraphStore';
 import SpotWatch from '../../components/SpotWatch/SpotWatch';
 import { Button } from '@mui/material';
-//import Button from '@mui/material/Button';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReadingTest = () => {
 
     const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph } = useParagraphStore();
     
     const [textAreaValue, setTextAreaValue] = useState(currentParagraph);
-
-    useEffect(() => {
-        setWordsInParagraph(currentParagraph);
-      }, [setWordsInParagraph, currentParagraph])
 
     const changeTextValue = (e) => {
       e.preventDefault();
@@ -26,13 +22,27 @@ const ReadingTest = () => {
         setTextAreaValue(e.target.value);
         setWordsInParagraph(e.target.value);
     }
+    
+    const notify = (time) => {
+      let totalMin = (time.m * 60 + time.s) / 60; 
+      toast.success(`Dakikada ${Math.round(wordsInParagraph.length / totalMin)} kelime okuyorsunuz.`,{
+        position: "bottom-right",
+        theme: "colored",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
 
   return (
     <Layout>
         <div className="mainContainer">
             <h6><i><b>Not: </b>Sayacı başlatıp girmiş olduğunuz metini okuyun. Bitirdiğinizde dakikada kaç kelime okuduğunuzu öğrenin.</i></h6>
 
-            <form className="textDataTest">
+            <div className="textDataTest">
                 <div className="textSideTest">
                     <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
                     <p>Metinde {wordsInParagraph.length} kelime var.</p>
@@ -40,17 +50,29 @@ const ReadingTest = () => {
                       //{...textAreaValue !== currentParagraph ? "" : disabled}
                       variant="contained" 
                       id="button"
-                      disabled={textAreaValue === currentParagraph ? true : false}
+                      disabled={textAreaValue.replace(/\s+/g, ' ').trim() === currentParagraph.replace(/\s+/g, ' ').trim() ? true : false}
                       onClick={(e) => changeTextValue(e)}
                     >
                         Metini Değiştir
                     </Button>
                 </div>
                 <div className="spotWatchMain">
-                    <SpotWatch/>
+                    <ToastContainer
+                      position="bottom-right"
+                      theme="colored"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                    />
+                    <SpotWatch notify={notify}/>
                 </div>
-
-            </form>
+    
+            </div>
         </div>
     </Layout>
   )

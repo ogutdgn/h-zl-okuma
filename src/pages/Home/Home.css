@@ -1,25 +1,21 @@
-/* .submitButtons{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.submitButtons div{
-    margin-top: 50px;
-} */
-
-/* .textSide textarea{
-    padding: 10px;
-    width: 1100px;
-    height: 300px;
-} */
-
 .textData{
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .textSide{
     display: flex;
     flex-direction: column;
+}
+
+.submitButtons{
+    display: flex;
+    justify-content: center;
+}
+
+.textSide textArea{
+    padding: 10px;
+    min-height: 100px;
+    height: 355px;
+    width: 1250px;
 }

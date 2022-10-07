@@ -2,93 +2,119 @@ import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useParagraphStore } from '../../store/useParagraphStore';
-import { Button } from '@mui/material';
 
-const currencies = [
+
+const wordNumbers = [
   {
-    value: '1',
-    label: '1',
+    value: 1,
   },
   {
-    value: '2',
-    label: '2',
+    value: 2,
   },
   {
-    value: '3',
-    label: '3',
+    value: 3,
   },
   {
-    value: '4',
-    label: '4',
+    value: 4,
   },
   {
-    value: '5',
-    label: '5',
+    value: 5,
   },
   {
-    value: '6',
-    label: '6',
+    value: 6,
   },
   {
-    value: '7',
-    label: '7',
+    value: 7,
   },
   {
-    value: '8',
-    label: '8',
+    value: 8,
   },
   {
-    value: '9',
-    label: '9',
+    value: 9,
+  },
+];
+
+const fontSizes = [
+  {
+    value: 15,
+  },
+  {
+    value: 20,
+  },
+  {
+    value: 25,
+  },
+  {
+    value: 30,
+  },
+  {
+    value: 35,
   },
 ];
 
 const ExerciseSettings = () => {
-  const { currentWordNumber, setCurrentWordNumber, changeExerciseFormat, currentWordPerMinute, setCurrentWordPerMinute } = useParagraphStore();
+  const { currentWordNumber, setCurrentWordNumber, changeExerciseFormat, currentWordPerMinute, setCurrentWordPerMinute, fontSizeofWord, setFontSizeofWord } = useParagraphStore();
 
   useEffect(() => {
     changeExerciseFormat();
   }, [changeExerciseFormat])
 
-  const handleWordNumber = (event) => {
-    setCurrentWordNumber(event.target.value);
-  }
-
-  const handleWordPerMinute = (event) => {
-    setCurrentWordPerMinute(event.target.value);
-  }
-
-  const handleSave = () => {
+  const handleWordNumber = (e) => {
+    setCurrentWordNumber(e.target.value);
     changeExerciseFormat();
+  }
+
+  const handleWordPerMinute = (e) => {
+    setCurrentWordPerMinute(e.target.value);
+  }
+
+  const handleFontSizeChange = (e) => {
+    setFontSizeofWord(e.target.value);
   }
 
   return (
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: "5ch" },
+        '& .MuiTextField-root': { m: 1, width: "8ch" },
       }}
-      
-    //   noValidate
       autoComplete="off"
+      className="spreederContainer"
     >
-      <div>
+    <div>
+
+        <TextField
+          id="standard-select-currency-native"
+          select
+          value={fontSizeofWord}
+          onChange={handleFontSizeChange}
+          SelectProps={{
+            native: true,
+          }}
+          variant="standard"
+          helperText="kelime boyutu"
+        >
+          {fontSizes.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.value}
+            </option>
+          ))}
+        </TextField>
         
         <TextField
           id="standard-select-currency-native"
           select
-        //   label="Native select"
           value={currentWordNumber}
           onChange={handleWordNumber}
           SelectProps={{
             native: true,
           }}
-        //   helperText=""
           variant="standard"
+          helperText="kelime sayısı"
         >
-          {currencies.map((option) => (
+          {wordNumbers.map((option) => (
             <option key={option.value} value={option.value}>
-              {option.label}
+              {option.value}
             </option>
           ))}
         </TextField>
@@ -102,9 +128,10 @@ const ExerciseSettings = () => {
             shrink: true,
           }}
           variant="standard"
+          helperText="dk kaç kelime"
         />
 
-        <Button variant='contained' color='success' onClick={handleSave}>Kaydet</Button>
+        {/* <Button variant='contained' color='success' onClick={handleSave}>Kaydet</Button> */}
       </div>
     </Box>
   );

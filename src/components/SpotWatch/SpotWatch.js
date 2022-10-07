@@ -3,7 +3,7 @@ import "./SpotWatch.css";
 import SpotWatchBtn from './SpotWatchBtn';
 import SpotWatchDisplay from './SpotWatchDisplay';
 
-export const SpotWatch = () => {
+export const SpotWatch = ({ notify }) => {
 
   const [time, setTime] = useState({s:0, m:0, ms:0});
   const [interv, setInterv] = useState();
@@ -52,14 +52,13 @@ export const SpotWatch = () => {
   };
 
   const finish = () => {
-    //console.log(time);
+    notify(time);
     clearInterval(interv);
     setStatus(0);
     setTime({ms:0, s:0, m:0, h:0});
   }
 
   const resume = () => start();
-
 
   return (
     <div className="main-section">

@@ -8,9 +8,9 @@
   overflow: hidden;
 }
 
-.main-container {
+/* .main-container {
   display: flex;
-}
+} */
 
 .title {
   font-size: 3rem;
@@ -26,12 +26,12 @@
   overflow-y: auto;
 }
 
-.top_section {
+/* .top_section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 10px;
-}
+} */
 .logo {
   font-size: 18px;
   line-height: 0;
@@ -117,19 +117,6 @@
   position: absolute;
   font-size: 10px;
   
-}
-
-.footer{
-  width: 200px;
-  display: flex;
-  justify-content: center;
-}
-
-
-.openBar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .arrowIcon{

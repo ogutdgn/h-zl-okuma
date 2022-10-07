@@ -14,6 +14,7 @@
     "bootstrap": "^5.2.0",
     "classnames": "^2.3.1",
     "framer-motion": "^6.5.1",
+    "glamor": "^2.20.40",
     "jquery": "^3.6.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
@@ -22,6 +23,7 @@
     "react-minimal-pie-chart": "^8.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.8",
     "recharts": "^2.1.13",
     "web-vitals": "^2.1.4",
     "zustand": "^3.5.5"
