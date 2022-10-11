@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./SpotWatch.css";
 import SpotWatchBtn from './SpotWatchBtn';
 import SpotWatchDisplay from './SpotWatchDisplay';
+import { KeyPressEvent } from '../KeyPressEvent/KeyPressEvent';
 
 export const SpotWatch = ({ notify }) => {
 
@@ -9,11 +10,7 @@ export const SpotWatch = ({ notify }) => {
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
-  //console.log(time);
-  // Not started = 0
-  // started = 1
-  // stopped = 2
-  
+
 
   const start = () => {
     run();
@@ -59,6 +56,8 @@ export const SpotWatch = ({ notify }) => {
   }
 
   const resume = () => start();
+
+  KeyPressEvent(start, stop, " ");
 
   return (
     <div className="main-section">

@@ -28,7 +28,7 @@ const ReadingTest = () => {
       toast.success(`Dakikada ${Math.round(wordsInParagraph.length / totalMin)} kelime okuyorsunuz.`,{
         position: "bottom-right",
         theme: "colored",
-        autoClose: 5000,
+        autoClose: false,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -43,31 +43,32 @@ const ReadingTest = () => {
             <h6><i><b>Not: </b>Sayacı başlatıp girmiş olduğunuz metini okuyun. Bitirdiğinizde dakikada kaç kelime okuduğunuzu öğrenin.</i></h6>
 
             <div className="textDataTest">
-                <div className="textSideTest">
-                    <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
-                    <p>Metinde {wordsInParagraph.length} kelime var.</p>
-                    <Button style={{width: "200px"}}
-                      //{...textAreaValue !== currentParagraph ? "" : disabled}
-                      variant="contained" 
-                      id="button"
-                      disabled={textAreaValue.replace(/\s+/g, ' ').trim() === currentParagraph.replace(/\s+/g, ' ').trim() ? true : false}
-                      onClick={(e) => changeTextValue(e)}
-                    >
-                        Metini Değiştir
-                    </Button>
+                <div className="mainSideText">
+                  <div className="textSideTest">
+                      <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
+                      <p>Metinde {wordsInParagraph.length} kelime var.</p>
+                      <Button style={{width: "200px"}}
+                        //{...textAreaValue !== currentParagraph ? "" : disabled}
+                        variant="contained" 
+                        id="button"
+                        disabled={textAreaValue.replace(/\s+/g, ' ').trim() === currentParagraph.replace(/\s+/g, ' ').trim() ? true : false}
+                        onClick={(e) => changeTextValue(e)}
+                      >
+                          Metini Değiştir
+                      </Button>
+                  </div>
                 </div>
                 <div className="spotWatchMain">
                     <ToastContainer
                       position="bottom-right"
                       theme="colored"
-                      autoClose={5000}
+                      autoClose={false}
                       hideProgressBar={false}
                       newestOnTop={false}
                       closeOnClick
                       rtl={false}
                       pauseOnFocusLoss
                       draggable
-                      pauseOnHover
                     />
                     <SpotWatch notify={notify}/>
                 </div>

@@ -18,10 +18,10 @@ export const getPageTitleByRoute = (path) => {
 }
 
 const routes = [
-    {
-      path: "/anasayfa",
-      name: "Ana Sayfa",
-    },
+    // {
+    //   path: "/anasayfa",
+    //   name: "Ana Sayfa",
+    // },
     {
       path: "/okumatesti",
       name: "Okuma Testi",

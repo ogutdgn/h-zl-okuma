@@ -4,6 +4,7 @@ import "./ReadingExercise.css";
 import { useParagraphStore } from '../../store/useParagraphStore';
 import ReadingExerciseBtns from './ReadingExerciseBtns';
 import ExerciseSettings from './ExerciseSettings';
+import { KeyPressEvent } from '../../components/KeyPressEvent/KeyPressEvent';
 
 const ReadingExercise = () => {
 
@@ -50,6 +51,7 @@ const ReadingExercise = () => {
     start();
   }
 
+  KeyPressEvent(start, stop, " ");
 
   return (
     <Layout>

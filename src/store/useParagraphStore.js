@@ -9,7 +9,7 @@ export const useParagraphStore = create((set, get) => ({
     currentParagraph: openPageParagraph,
     currentWordNumber: 1,
     currentWordPerMinute: 300,
-    fontSizeofWord: 15,
+    fontSizeofWord: 20,
 
     changeParagraphFunc: (newParagraph) => {
         set({ currentParagraph: newParagraph });

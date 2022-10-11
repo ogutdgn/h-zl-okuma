@@ -9,6 +9,7 @@ const Header = () => {
     
     <div className="headerDiv">
         <Toolbar>
+          <img src="../assets/imgs/resimkitap.ico" alt="" />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Hızlı Okuma
           </Typography>

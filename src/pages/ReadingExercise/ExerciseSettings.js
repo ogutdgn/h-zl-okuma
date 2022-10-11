@@ -76,7 +76,7 @@ const ExerciseSettings = () => {
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: "8ch" },
+        '& .MuiTextField-root': { m: 1, width: "100px" },
       }}
       autoComplete="off"
       className="spreederContainer"

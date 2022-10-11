@@ -1,18 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export const KeyPressEvent = (callBack, targetKey) => {
+export const KeyPressEvent = (callBack,callBack2, targetKey) => {
+
+    const [callBackStatus, setCallBackStatus] = useState(false);
 
     useEffect(() => {
         const keyPressHandler = (e) => {
             if(e.key === targetKey){
-                callBack();
-            } 
+                if(callBackStatus === false){
+                    callBack();
+                    setCallBackStatus(true);
+                }else{
+                    callBack2();
+                    setCallBackStatus(false);
+                }
+                
+            }
         }
         window.addEventListener("keydown", keyPressHandler);
         return () => {
             window.removeEventListener("keydown", keyPressHandler);
         }
-    }, [callBack, targetKey]);
+    }, [callBack, callBack2, targetKey, callBackStatus]);
 
 }
 

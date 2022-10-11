@@ -5,25 +5,32 @@
 
 .textDataTest{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-left: 50px;
 }
 
 .mainContainer h6{
     margin-bottom: 40px;
 }
 
+.mainSideText{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
 .textSideTest textarea{
     padding: 10px;
     min-height: 100px;
     height: 355px;
-    width: 1250px;
+    width: 700px;
 }
 
 .spotWatchMain{
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
-    margin-left: 40px;
+    margin-top: 100px;
+    margin-left: 100px;
 }
 
 .textTimeAndNumber div{
