@@ -6,7 +6,7 @@ import {
   } from "react-router-dom";
 
 import React from 'react';
-import Home from "../pages/Home/Home";
+// import Home from "../pages/Home/Home";
 import ReadingTest from "../pages/ReadingTest/ReadingTest";
 import ReadingExercise from "../pages/ReadingExercise/ReadingExercise";
 
@@ -21,8 +21,8 @@ const AppRouter = () => {
     <div>
         <BrowserRouter>
             <Routes>
-                <Route path="/anasayfa" element={<Home/>} />
-                <Route path="/okumatesti" element={<ReadingTest/>} />
+                {/* <Route path="/anasayfa" element={<Home/>} /> */}
+                <Route path="/" element={<ReadingTest/>} />
                 <Route path="/okumaegzersizi" element={<ReadingExercise/>} />
             </Routes>
         </BrowserRouter>
