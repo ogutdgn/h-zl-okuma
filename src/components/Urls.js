@@ -23,7 +23,7 @@ const routes = [
     //   name: "Ana Sayfa",
     // },
     {
-      path: "/okumatesti",
+      path: "/",
       name: "Okuma Testi",
     },
     {
