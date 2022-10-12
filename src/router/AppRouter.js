@@ -14,9 +14,9 @@ import ReadingExercise from "../pages/ReadingExercise/ReadingExercise";
 
 
 const AppRouter = () => {
-  if(window.location.pathname === "/"){
-    window.location.pathname = "/anasayfa";
-  }
+  // if(window.location.pathname === "/"){
+  //   window.location.pathname = "/anasayfa";
+  // }
   return (
     <div>
         <BrowserRouter>
