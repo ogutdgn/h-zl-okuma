@@ -3,19 +3,22 @@ import "./SpotWatch.css";
 import SpotWatchBtn from './SpotWatchBtn';
 import SpotWatchDisplay from './SpotWatchDisplay';
 import { KeyPressEvent } from '../KeyPressEvent/KeyPressEvent';
+import { useParagraphStore } from '../../store/useParagraphStore';
 
 export const SpotWatch = ({ notify }) => {
+
+  const { setStartSpotWatch } = useParagraphStore();
 
   const [time, setTime] = useState({s:0, m:0, ms:0});
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
 
-
   const start = () => {
     run();
     setStatus(1);
     setInterv(setInterval(run, 10));
+    setStartSpotWatch(true);
   };
 
   let updatedMs = time.ms, updatedS = time.s, updatedM = time.m;
@@ -40,6 +43,7 @@ export const SpotWatch = ({ notify }) => {
   const stop = () => {
     clearInterval(interv);
     setStatus(2);
+    setStartSpotWatch(false); 
   };
 
   const reset = () => {

@@ -8,7 +8,7 @@ import { KeyPressEvent } from '../../components/KeyPressEvent/KeyPressEvent';
 
 const ReadingExercise = () => {
 
-  const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute, fontSizeofWord } = useParagraphStore();
+  const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute, fontSizeofWord, setStartSpotWatch } = useParagraphStore();
   const [currentWord, setCurrentWord] = useState(wordsInParagraph[0]);
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
@@ -34,11 +34,13 @@ const ReadingExercise = () => {
     setInterv(setInterval(handleStart, 1000 / (currentWordPerMinute / 60) * currentWordNumber));
     setStatus(1);
     clearInterval(interv);
+    setStartSpotWatch(true);
   }
 
   const stop = () => {
     clearInterval(interv);
     setStatus(2);
+    setStartSpotWatch(false);
   }
 
   const reset = () => {

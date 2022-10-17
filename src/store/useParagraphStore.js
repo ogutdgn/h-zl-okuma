@@ -10,9 +10,14 @@ export const useParagraphStore = create((set, get) => ({
     currentWordNumber: 1,
     currentWordPerMinute: 300,
     fontSizeofWord: 20,
-
+    startSpotWatch: false,
+    
     changeParagraphFunc: (newParagraph) => {
         set({ currentParagraph: newParagraph });
+    },
+
+    setStartSpotWatch: (status) => {
+        set({ startSpotWatch: status });
     },
 
     setCurrentWordNumber: (number) => {
