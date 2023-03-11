@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParagraphStore } from '../../store/useParagraphStore';
 
 export const KeyPressEvent = (callBack, callBack2, targetKey) => {

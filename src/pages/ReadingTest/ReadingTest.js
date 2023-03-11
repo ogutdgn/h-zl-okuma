@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import "./ReadingTest.css";
 import Layout from '../../components/Layout/Layout';
 import { useParagraphStore } from '../../store/useParagraphStore';
@@ -8,9 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ReadingTest = () => {
 
-    const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph, activeElement, setActiveElement } = useParagraphStore();
+    const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph } = useParagraphStore();
 
-    const [isFocus, setIsFocus] = useState(false);
+    // const [isFocus, setIsFocus] = useState(false);
 
     const handleTextAreaChange = (e) => {
         changeParagraphFunc(e.target.value);
@@ -40,7 +40,7 @@ const ReadingTest = () => {
             <div className="textDataTest">
                 <div className="mainSideText">
                   <div className="textSideTest">
-                      <textarea name="text" id="text" cols="100" rows="10" value={currentParagraph} onFocus={() => setIsFocus(true)} onBlur={() => setIsFocus(false)} onChange={(e) => handleTextAreaChange(e)}/>
+                      <textarea name="text" id="text" cols="100" rows="10" value={currentParagraph} onChange={(e) => handleTextAreaChange(e)}/>
                       {/* {isFocus ? setActiveElement(true) : setActiveElement(false)} */}
                       <p>Metinde {wordsInParagraph.length} kelime var.</p>
                   </div>
