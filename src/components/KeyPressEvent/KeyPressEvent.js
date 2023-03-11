@@ -1,27 +1,42 @@
 import { useEffect, useState } from 'react';
+import { useParagraphStore } from '../../store/useParagraphStore';
 
-export const KeyPressEvent = (callBack,callBack2, targetKey) => {
+export const KeyPressEvent = (callBack, callBack2, targetKey) => {
 
-    const [callBackStatus, setCallBackStatus] = useState(false);
+    const { startSpotWatch, setStartSpotWatch, activeElement } = useParagraphStore();
+    //const [isFocus, setIsFocus] = useState(false);
+    //console.log(document.selection);
+    
 
     useEffect(() => {
+        //let text = document.getElementById("text");
+        // text = document.activeElement;
+        //text === document.activeElement ? setIsFocus(true) : setIsFocus(false);
+
+        //console.log(isFocus);,
+        //console.log(activeElement);
+
         const keyPressHandler = (e) => {
-            if(e.key === targetKey){
-                if(callBackStatus === false){
+            
+            if((activeElement === false) && (e.key === targetKey)){
+                if((startSpotWatch === false)){
                     callBack();
-                    setCallBackStatus(true);
+                    setStartSpotWatch(true);
                 }else{
                     callBack2();
-                    setCallBackStatus(false);
+                    setStartSpotWatch(false);
                 }
-                
+                    
             }
+            
         }
-        window.addEventListener("keydown", keyPressHandler);
+        if(activeElement === false){
+            window.addEventListener("keydown", keyPressHandler);
+        }
         return () => {
             window.removeEventListener("keydown", keyPressHandler);
         }
-    }, [callBack, callBack2, targetKey, callBackStatus]);
+    }, [callBack, callBack2, targetKey, startSpotWatch, setStartSpotWatch, activeElement]);
 
 }
 

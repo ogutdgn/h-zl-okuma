@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React,{ useState } from 'react';
 import "./ReadingTest.css";
 import Layout from '../../components/Layout/Layout';
 import { useParagraphStore } from '../../store/useParagraphStore';
 import SpotWatch from '../../components/SpotWatch/SpotWatch';
-import { Button } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ReadingTest = () => {
 
-    const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph } = useParagraphStore();
-    
-    const [textAreaValue, setTextAreaValue] = useState(currentParagraph);
+    const { currentParagraph, changeParagraphFunc, setWordsInParagraph, wordsInParagraph, activeElement, setActiveElement } = useParagraphStore();
 
-    const changeTextValue = (e) => {
-      e.preventDefault();
-      changeParagraphFunc(textAreaValue);
-    }
+    const [isFocus, setIsFocus] = useState(false);
 
     const handleTextAreaChange = (e) => {
-        setTextAreaValue(e.target.value);
+        changeParagraphFunc(e.target.value);
         setWordsInParagraph(e.target.value);
     }
     
@@ -37,6 +31,7 @@ const ReadingTest = () => {
       });
     }
 
+
   return (
     <Layout>
         <div className="mainContainer">
@@ -46,17 +41,9 @@ const ReadingTest = () => {
             <div className="textDataTest">
                 <div className="mainSideText">
                   <div className="textSideTest">
-                      <textarea name="text" id="text" cols="100" rows="10" value={textAreaValue} onChange={(e) => handleTextAreaChange(e)}/>
+                      <textarea name="text" id="text" cols="100" rows="10" value={currentParagraph} onFocus={() => setIsFocus(true)} onBlur={() => setIsFocus(false)} onChange={(e) => handleTextAreaChange(e)}/>
+                      {/* {isFocus ? setActiveElement(true) : setActiveElement(false)} */}
                       <p>Metinde {wordsInParagraph.length} kelime var.</p>
-                      <Button style={{width: "200px"}}
-                        //{...textAreaValue !== currentParagraph ? "" : disabled}
-                        variant="contained" 
-                        id="button"
-                        disabled={textAreaValue.replace(/\s+/g, ' ').trim() === currentParagraph.replace(/\s+/g, ' ').trim() ? true : false}
-                        onClick={(e) => changeTextValue(e)}
-                      >
-                          Metini Değiştir
-                      </Button>
                   </div>
                 </div>
                 <div className="spotWatchMain">
