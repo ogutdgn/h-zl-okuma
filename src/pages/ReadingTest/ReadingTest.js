@@ -35,7 +35,6 @@ const ReadingTest = () => {
   return (
     <Layout>
         <div className="mainContainer">
-          <h1>hello</h1>
             <h6><i><b>Not: </b>Sayacı başlatıp girmiş olduğunuz metini okuyun. Bitirdiğinizde dakikada kaç kelime okuduğunuzu öğrenin.</i></h6>
 
             <div className="textDataTest">

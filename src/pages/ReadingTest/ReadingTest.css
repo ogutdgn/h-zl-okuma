@@ -6,31 +6,31 @@
 .textDataTest{
     display: flex;
     justify-content: center;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 .mainContainer h6{
-    margin-bottom: 40px;
+    margin-bottom: 1%;
 }
 
 .mainSideText{
     display: flex;
     justify-content: center;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 
 .textSideTest textarea{
     padding: 10px;
     min-height: 100px;
-    height: 355px;
-    width: 700px;
+    height: 100%;
+    width: 100%;
 }
 
 .spotWatchMain{
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
-    margin-left: 100px;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .textTimeAndNumber div{
@@ -45,3 +45,14 @@
 .underSideText{
     display: flex;
 }
+
+@media screen and (max-width: 600px) {
+    .textDataTest {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spotWatchMain{
+        margin-top: 15%;
+    }
+  }
