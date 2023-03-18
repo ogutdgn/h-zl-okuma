@@ -8,8 +8,11 @@ import { KeyPressEvent } from '../../components/KeyPressEvent/KeyPressEvent';
 
 const ReadingExercise = () => {
 
+  // var wordIndex = 0;
+  
   const { currentParagraph, setWordsInParagraph, wordsInParagraph, exerciseFormat, currentWordNumber, currentWordPerMinute, fontSizeofWord, setStartSpotWatch } = useParagraphStore();
   const [currentWord, setCurrentWord] = useState(wordsInParagraph[0]);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
 
@@ -18,13 +21,15 @@ const ReadingExercise = () => {
   }, [setWordsInParagraph, currentParagraph])
 
 
-  let currentWordIndex = 0;
+  
+  let wordIndex = currentWordIndex;
 
   const handleStart = () => {
-    
-    setCurrentWord(exerciseFormat[currentWordIndex]);
+    console.log(currentWordIndex);
+    setCurrentWord(exerciseFormat[wordIndex]);
     if(currentWordIndex < exerciseFormat.length){
-      currentWordIndex++;
+      wordIndex++;
+      setCurrentWordIndex(wordIndex);
     }else{
       reset();
     }
@@ -41,6 +46,8 @@ const ReadingExercise = () => {
     clearInterval(interv);
     setStatus(2);
     setStartSpotWatch(false);
+    setCurrentWordIndex(currentWordIndex);
+    console.log(currentWordIndex);
   }
 
   const reset = () => {
@@ -50,6 +57,9 @@ const ReadingExercise = () => {
   }
 
   const resume = () => {
+    setStatus(1);
+    clearInterval(interv);
+    setStartSpotWatch(true);
     start();
   }
 
