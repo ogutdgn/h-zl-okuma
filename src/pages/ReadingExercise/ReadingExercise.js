@@ -25,12 +25,12 @@ const ReadingExercise = () => {
   let wordIndex = currentWordIndex;
 
   const handleStart = () => {
-    console.log(currentWordIndex);
     setCurrentWord(exerciseFormat[wordIndex]);
-    if(currentWordIndex < exerciseFormat.length){
+    if(wordIndex < exerciseFormat.length){
       wordIndex++;
       setCurrentWordIndex(wordIndex);
     }else{
+      // console.log("bitti");
       reset();
     }
   }
@@ -54,6 +54,9 @@ const ReadingExercise = () => {
     clearInterval(interv);
     setStatus(0);
     setCurrentWord(exerciseFormat[0]);
+    setStartSpotWatch(false);
+    // wordIndex = 0;
+    setCurrentWordIndex(0);
   }
 
   const resume = () => {
