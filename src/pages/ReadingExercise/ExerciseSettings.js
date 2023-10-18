@@ -3,98 +3,33 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useParagraphStore } from '../../store/useParagraphStore';
 
-
-const wordNumbers = [
-  {
-    value: 1,
-  },
-  {
-    value: 2,
-  },
-  {
-    value: 3,
-  },
-  {
-    value: 4,
-  },
-  {
-    value: 5,
-  },
-  {
-    value: 6,
-  },
-  {
-    value: 7,
-  },
-  {
-    value: 8,
-  },
-  {
-    value: 9,
-  },
-];
-
-const fontSizes = [
-  {
-    value: 15,
-  },
-  {
-    value: 20,
-  },
-  {
-    value: 25,
-  },
-  {
-    value: 30,
-  },
-  {
-    value: 35,
-  },
-];
+const wordNumbers = [...Array(9)].map((_, i) => ({ value: i + 1 }));
+const fontSizes = [15, 20, 25, 30, 35].map(value => ({ value }));
 
 const ExerciseSettings = () => {
-  const { currentWordNumber, setCurrentWordNumber, changeExerciseFormat, currentWordPerMinute, setCurrentWordPerMinute, fontSizeofWord, setFontSizeofWord } = useParagraphStore();
+  const { 
+    currentWordNumber, setCurrentWordNumber, changeExerciseFormat, 
+    currentWordPerMinute, setCurrentWordPerMinute, 
+    fontSizeofWord, setFontSizeofWord 
+  } = useParagraphStore();
 
   useEffect(() => {
     changeExerciseFormat();
-  }, [changeExerciseFormat])
-
-  const handleWordNumber = (e) => {
-    setCurrentWordNumber(e.target.value);
-    changeExerciseFormat();
-  }
-
-  const handleWordPerMinute = (e) => {
-    setCurrentWordPerMinute(e.target.value);
-  }
-
-  const handleFontSizeChange = (e) => {
-    setFontSizeofWord(e.target.value);
-  }
+  }, [changeExerciseFormat]);
 
   return (
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: "100px" },
-      }}
-      autoComplete="off"
-      className="spreederContainer"
-    >
-    <div>
-
+    <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: "100px" }}} autoComplete="off" className="spreederContainer">
+      <div>
         <TextField
-          id="standard-select-currency-native"
+          id="fontSize"
           select
           value={fontSizeofWord}
-          onChange={handleFontSizeChange}
-          SelectProps={{
-            native: true,
-          }}
+          onChange={(e) => setFontSizeofWord(e.target.value)}
+          SelectProps={{ native: true }}
           variant="standard"
           helperText="kelime boyutu"
         >
-          {fontSizes.map((option) => (
+          {fontSizes.map(option => (
             <option key={option.value} value={option.value}>
               {option.value}
             </option>
@@ -102,17 +37,18 @@ const ExerciseSettings = () => {
         </TextField>
         
         <TextField
-          id="standard-select-currency-native"
+          id="wordCount"
           select
           value={currentWordNumber}
-          onChange={handleWordNumber}
-          SelectProps={{
-            native: true,
+          onChange={(e) => {
+            setCurrentWordNumber(e.target.value);
+            changeExerciseFormat();
           }}
+          SelectProps={{ native: true }}
           variant="standard"
           helperText="kelime sayısı"
         >
-          {wordNumbers.map((option) => (
+          {wordNumbers.map(option => (
             <option key={option.value} value={option.value}>
               {option.value}
             </option>
@@ -120,18 +56,14 @@ const ExerciseSettings = () => {
         </TextField>
 
         <TextField
-          id="standard-number"
+          id="wordsPerMinute"
           type="number"
           value={currentWordPerMinute}
-          onChange={handleWordPerMinute}
-          InputLabelProps={{
-            shrink: true,
-          }}
+          onChange={(e) => setCurrentWordPerMinute(e.target.value)}
+          InputLabelProps={{ shrink: true }}
           variant="standard"
           helperText="dk kaç kelime"
         />
-
-        {/* <Button variant='contained' color='success' onClick={handleSave}>Kaydet</Button> */}
       </div>
     </Box>
   );

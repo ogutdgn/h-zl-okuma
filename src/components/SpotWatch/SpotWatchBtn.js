@@ -12,7 +12,7 @@ const SpotWatchBtn = (props) => {
           style={{ width: "100px", backgroundColor: "green" }}
           onClick={props.start}
           >
-            Başla
+            Start
           </Button> : ""
         }
       </div>
@@ -26,7 +26,7 @@ const SpotWatchBtn = (props) => {
             style={{ width: "100px", backgroundColor: "red" }}
             onClick={props.stop}
             >
-              Durdur
+              Stop
             </Button>
             
           </div> : ""
@@ -42,7 +42,7 @@ const SpotWatchBtn = (props) => {
             style={{ width: "100px", backgroundColor: "green" }}
             onClick={props.resume}
             >
-              Devam
+              Resume
             </Button>
             <Button 
             className="stopwatch-btn stopwatch-btn-yel"
@@ -50,7 +50,7 @@ const SpotWatchBtn = (props) => {
             style={{ width: "100px", backgroundColor: "red" }}
             onClick={props.finish}
             >
-              Bitir
+              Finish
             </Button>
             <Button 
             className="stopwatch-btn stopwatch-btn-yel"
@@ -58,7 +58,7 @@ const SpotWatchBtn = (props) => {
             style={{ width: "100px" }}
             onClick={props.reset}
             >
-              Sıfırla
+              Reset
             </Button>
           </div> : ""
         }

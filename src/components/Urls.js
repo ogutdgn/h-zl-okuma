@@ -36,7 +36,7 @@ const routes = [
   },
   {
     path: "/exercise",
-    name: "Exercise",
+    name: "Exercises",
     subRoutes: [
       {
         path: "/exercise/reading-test",

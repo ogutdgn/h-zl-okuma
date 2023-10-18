@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { Container, Typography, Menu, MenuItem } from '@mui/material';
@@ -9,15 +9,10 @@ function Exercise2() {
     const [anchorEl, setAnchorEl] = useState(null);
     const [distance, setDistance] = useState(30);
     const [showNumbers, setShowNumbers] = useState(false);
-    const [running, setRunning] = useState(false);
-    const [showOptions, setShowOptions] = useState(false);
-    const [inputBorderColor, setInputBorderColor] = useState("#ccc");
     const [digitCount, setDigitCount] = useState(1);
     const [numbers, setNumbers] = useState([generateRandomNumber(digitCount), generateRandomNumber(digitCount)]);
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
-    const timeoutRef = useRef(null);
-    const inputRef = useRef(null);
 
     function generateRandomNumber(digitCount) {
         const min = Math.pow(10, digitCount - 1);
@@ -113,14 +108,14 @@ function Exercise2() {
                     <div style={{ position: '', top: '10px', left: '10px' }}>
                         
                             <Button variant="contained" color="secondary" onClick={startExercise}>
-                                Egzersizi Başlat
+                                Start
                             </Button>
                         
                     </div>
                     
                     <div style={{ position: '', top: '10px', right: '10px' }}>
                         <Button variant="contained" color="primary" onClick={handleClick}>
-                            Seçenekler
+                            Options
                         </Button>
                         <Menu
                             anchorEl={anchorEl}
@@ -128,16 +123,16 @@ function Exercise2() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem onClick={() => { setDigitCount(1); handleClose(); resetExercise(); }}>Tek Basamaklı</MenuItem>
-                            <MenuItem onClick={() => { setDigitCount(2); handleClose(); resetExercise(); }}>Çift Basamaklı</MenuItem>
-                            <MenuItem onClick={() => { setDigitCount(3); handleClose(); resetExercise(); }}>Üç Basamaklı</MenuItem>
+                            <MenuItem onClick={() => { setDigitCount(1); handleClose(); resetExercise(); }}>One Digit</MenuItem>
+                            <MenuItem onClick={() => { setDigitCount(2); handleClose(); resetExercise(); }}>Two Digit</MenuItem>
+                            <MenuItem onClick={() => { setDigitCount(3); handleClose(); resetExercise(); }}>Three Digit</MenuItem>
                         </Menu>
                     </div>
 
                 </div>
                 
     
-                <Typography variant="h6" style={{ marginBottom: '20px' }}>Doğru: {correctCount} Yanlış: {incorrectCount}</Typography>
+                <Typography variant="h6" style={{ marginBottom: '20px' }}>Correct: {correctCount} Wrong: {incorrectCount}</Typography>
     
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div style={{ display: 'inline-block', position: 'relative', marginBottom: '20px' }}>
@@ -156,11 +151,11 @@ function Exercise2() {
                         variant="filled"
                         value={userInput}
                         onChange={e => setUserInput(e.target.value)}
-                        placeholder="Sayıları Girin"
+                        placeholder="Enter the Numbers"
                         style={{ marginBottom: '10px' }}
                         onKeyPress={handleKeyPress}
                     />
-                    <Button variant="contained" onClick={checkAnswer}>Doğrula</Button>
+                    <Button variant="contained" onClick={checkAnswer}>Verify</Button>
                 </div>
             </Container>
         </Layout>

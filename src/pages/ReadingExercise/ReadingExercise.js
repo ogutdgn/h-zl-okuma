@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout/Layout';
+import { Grid, Box } from '@mui/material';
 import "./ReadingExercise.css";
 import { useParagraphStore } from '../../store/useParagraphStore';
 import ReadingExerciseBtns from './ReadingExerciseBtns';
@@ -70,17 +71,21 @@ const ReadingExercise = () => {
 
   return (
     <Layout>
-      <div className="spreeder">
-        <div className="spreederBox">
-          <div className="word">
-            <p style={{ fontSize: `${fontSizeofWord}px` }}>{currentWord}</p>
-          </div>
-          <ExerciseSettings/>
-          <ReadingExerciseBtns status={status} start={start} stop={stop} reset={reset} resume={resume}/>
-        </div>
-      </div>
+      <Grid container justifyContent="center" alignItems="center">
+        <Grid>
+          <Box className="spreeder">
+            <Box className="spreederBox">
+              <Box className="word">
+                <p style={{ fontSize: `${fontSizeofWord}px` }}>{currentWord}</p>
+              </Box>
+              <ExerciseSettings />
+              <ReadingExerciseBtns status={status} start={start} stop={stop} reset={reset} resume={resume} />
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
     </Layout>
-  )
+  );  
 }
 
 export default ReadingExercise;
