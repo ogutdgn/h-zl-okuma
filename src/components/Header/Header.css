@@ -1,0 +1,8 @@
+/* CSS styles for hover and active states */
+.nav-link:hover .button-hover {
+    color: #007BFF;  /* Change this to the hover color you prefer */
+}
+
+.active-link .button-hover {
+    color: #FF4500;  /* Change this to the active link color you prefer */
+}
