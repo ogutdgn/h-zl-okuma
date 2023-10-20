@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from '../Urls';
-import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Drawer, List, ListItem, IconButton, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, Button, Menu, MenuItem, Drawer, List, ListItem, IconButton, useMediaQuery } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../../assets/logos/swiftReaders-logo.jpeg";

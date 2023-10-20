@@ -7,8 +7,6 @@ import Footer from '../Footer/Footer';
 
 
 const Layout = ({ children }) => {
-  
-  let winHeight = window.innerHeight
 
   return (
     <div className='allDiv'>
