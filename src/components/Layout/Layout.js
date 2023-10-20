@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => {
   
-  let winHeight = window.innerHeight * 0.8
+  let winHeight = window.innerHeight
 
   return (
     <div className='allDiv'>
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
 
               <div className='childs'>
                 
-                <div style={{height: winHeight}} className='bodyWrapper'>
+                <div className='bodyWrapper'>
                   <div className='contentWrapper enable-text-selection'>
                     {children}
                   </div>

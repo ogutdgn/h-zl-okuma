@@ -4,6 +4,9 @@ import routes from '../Urls';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Drawer, List, ListItem, IconButton, useMediaQuery } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import logo from "../../assets/logos/swiftReaders-logo.jpeg";
+import { useNavigate } from 'react-router-dom';
+
 import "./Header.css";
 
 const Header = () => {
@@ -13,6 +16,7 @@ const Header = () => {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -88,11 +92,11 @@ const Header = () => {
 
 
   return (
-    <AppBar position="static" sx={{ marginBottom: '20px', backgroundColor: 'white' }}>
+    <AppBar position="static" sx={{ marginBottom: '20px', backgroundColor: '#f7f7f7' }}>
       <Toolbar sx={{ padding: "30px" }}>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'black' }}>
-          Swift Readers
-        </Typography>
+        <div style={{ flexGrow: 1, cursor: "pointer" }} onClick={() => navigate("/")}>
+          <img src={logo} height="100px" alt="logo" />
+        </div>
         {isMobile ? (
           <>
             <IconButton edge="end" aria-label="menu" onClick={toggleDrawer(true)} sx={{ color: 'black' }}>
@@ -111,7 +115,7 @@ const Header = () => {
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     onMouseEnter={e => setAnchorEl(e.currentTarget)}
-                    sx={{ color: 'black', backgroundColor: 'white', '&:hover': { backgroundColor: 'vividblue', color: 'white' } }}
+                    sx={{ color: 'black', backgroundColor: '#f7f7f7', '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" } }}
                     className='button-hover'
                   >
                     {route.name}
@@ -132,7 +136,7 @@ const Header = () => {
                           to={subRoute.path}
                           sx={{ 
                               color: 'black',
-                              '&:hover': { backgroundColor: '#71a0d6', color: 'white' },
+                              '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" },
                               '&.active': { backgroundColor: '#1664c0', color: 'white', fontWeight: 'bold' },
                               '&.active:hover': { backgroundColor: '#1664c0', color: 'white' }
                           }}
@@ -160,12 +164,12 @@ const Header = () => {
                     <Button 
                         sx={{ 
                             color: 'black', 
-                            backgroundColor: 'white',
+                            backgroundColor: '#f7f7f7',
                             marginRight: "20px", 
                             padding: "15px",
                             width: 100,
                             borderRadius: "50px", 
-                            '&:hover': { backgroundColor: '#71a0d6', color: 'white' },
+                            '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" },
                             '&.active': { backgroundColor: '#1664c0', color: 'white', fontWeight: 'bold' },
                             '&.active:hover': { backgroundColor: '#1664c0', color: 'white' }
                         }} 
@@ -173,9 +177,6 @@ const Header = () => {
                     >
                         {route.name}
                     </Button>
-
-
-
                 </NavLink>
 
               );

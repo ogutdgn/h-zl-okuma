@@ -72,7 +72,7 @@ const ReadingExercise = () => {
   return (
     <Layout>
       <Grid container justifyContent="center" alignItems="center">
-        <Grid>
+        <Grid sx={{ width: "70%"}}>
           <Box className="spreeder">
             <Box className="spreederBox">
               <Box className="word">
@@ -85,7 +85,7 @@ const ReadingExercise = () => {
         </Grid>
       </Grid>
     </Layout>
-  );  
+  );   
 }
 
 export default ReadingExercise;

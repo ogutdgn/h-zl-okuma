@@ -4,6 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
+      <div style={{ width: "1200px", display: "flex" }}>
       <section className="footer-about">
         <h2>ABOUT US</h2>
         <p>StemWise is where young minds embark on a journey of innovation. Through fun programming lessons and mentorship, we're nurturing the next generation as problem solvers, dreamers, and trailblazers in the world of STEM for a brighter, smarter future.</p>
@@ -30,6 +31,7 @@ const Footer = () => {
         <p>Programming</p>
         <p>Science</p>
       </section>
+      </div>
       <div className="footer-bottom">
         <p>ABOUT | OUR STORES | BLOG | CONTACT | FAQ</p>
       </div>
