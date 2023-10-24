@@ -19,7 +19,7 @@ const slideStyles = {
 const slideTextStyle = {
   fontFamily: "'Playfair Display', serif",
   color: "#fff",
-  fontSize: "48px",  // Increase font size for prominence
+  fontSize: "50px",  // Increase font size for prominence
   fontWeight: "bold",  // Bold text for emphasis
   letterSpacing: "2px",  // Spacing between letters for a more aesthetic look
   textTransform: "uppercase",  // Convert text to uppercase
@@ -28,8 +28,9 @@ const slideTextStyle = {
   top: "50%",  // Center vertically
   left: "50%",  // Center horizontally
   transform: "translate(-50%, -50%)",  // Adjust to truly center the text
-  backdropFilter: "blur(4px)",  // Optional: Add a blur effect for readability
+  backdropFilter: "blur(6px)",  // Optional: Add a blur effect for readability
   padding: "10px 20px",  // Some padding around the text
+  width: "90%"
 };
 
 const rightArrowStyles = {
@@ -74,9 +75,9 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    { src: carousel1, title: "beach", text: "This is a beach view" },
-    { src: carousel2, title: "boat", text: "This is a boat view" },
-    { src: carousel3, title: "forest", text: "This is a forest view" },
+    { src: carousel1, title: "beach", text: "Boost Your Reading Speed and Comprehension Now!" },
+    { src: carousel2, title: "boat", text: "Unlock Your Potential with Targeted Exercises!"  },
+    { src: carousel3, title: "forest", text: "Dive into Our Blogs for Reading Mastery!" },
   ];
 
   useEffect(() => {

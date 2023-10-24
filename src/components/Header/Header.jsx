@@ -7,7 +7,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../../assets/logos/swiftReaders-logo.jpeg";
 import { useNavigate } from 'react-router-dom';
 
-import "./Header.css";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
