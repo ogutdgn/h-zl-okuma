@@ -56,15 +56,17 @@ export const Contact = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      emailjs.sendForm('service_vaxfiwy', 'template_5mroox2', form.current, '0ZeIImYKyM30u5LKz')
-        .then((result) => {
-          toast.success('Email sent successfully!');
-          setFormData({ from_name: "", from_email: "", message: "" });
-        }, (error) => {
-          console.log(error.text);
-        });
+        emailjs.sendForm('service_vaxfiwy', 'template_5mroox2', form.current, '0ZeIImYKyM30u5LKz')
+            .then((result) => {
+                toast.success('Email sent successfully!');
+                setFormData({ from_name: "", from_email: "", message: "" });
+                setErrors({ from_name: false, from_email: false, message: false }); // Reset errors state
+            }, (error) => {
+                console.log(error.text);
+            });
     }
-  };
+};
+
 
   const toastStyles = {
     container: {
@@ -88,7 +90,7 @@ export const Contact = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <form ref={form} onSubmit={sendEmail}>
-                  <TextField
+                <TextField
                     fullWidth
                     label="Name"
                     variant="outlined"
@@ -98,8 +100,9 @@ export const Contact = () => {
                     onChange={handleInputChange}
                     error={errors.from_name}
                     helperText={errors.from_name && "Name is required."}
-                  />
-                  <TextField
+                    placeholder="Enter your full name"
+                />
+                <TextField
                     fullWidth
                     label="Email"
                     variant="outlined"
@@ -109,8 +112,9 @@ export const Contact = () => {
                     onChange={handleInputChange}
                     error={errors.from_email}
                     helperText={errors.from_email && (validateEmail(formData.from_email) ? "Email is required." : "Email format is invalid.")}
-                  />
-                  <TextField
+                    placeholder="Enter your valid email address (example@mail.com)"
+                />
+                <TextField
                     fullWidth
                     label="Message"
                     variant="outlined"
@@ -122,7 +126,9 @@ export const Contact = () => {
                     onChange={handleInputChange}
                     error={errors.message}
                     helperText={errors.message && "Message is required."}
-                  />
+                    placeholder="Write your message or inquiry here"
+                />
+
                   <Box mt={2} style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Button type="submit" variant="contained" color="primary">
                       Send
