@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Grid,
-  Box
+  Box,
 } from '@mui/material';
 import MemberCard from './MemberCard';
 import MemberList from './MemberList';
@@ -14,8 +14,7 @@ const TeamMembers = () => {
   
     return (
         <Box display="flex" justifyContent="center" px={2}>  {/* Added horizontal padding here */}
-          <Grid container spacing={2} sx={{ maxWidth: '80%', margin: "5%" }}>
-  
+          <Grid container spacing={2} sx={{ maxWidth: '80%', margin: "5%" }}>  
             {/* Display Co-Founders centered */}
             <Grid 
               item 
