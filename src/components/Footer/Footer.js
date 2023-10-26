@@ -9,7 +9,7 @@ const Footer = () => {
                 <Container>
                     <Grid container spacing={4}> {/* Increased grid spacing */}
                         <Grid item xs={12} md={6} lg={5}>
-                            <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}><span>WALEED</span>CODES</Typography>
+                            <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}><span>Swift</span>Readers</Typography>
                             <Typography sx={{ fontWeight: 'bold', mt: 2 }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit...</Typography> {/* Increased margin-top */}
                             <Box mt={3}> {/* Increased margin-top */}
                                 <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">

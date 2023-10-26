@@ -78,7 +78,7 @@ export const Contact = () => {
     <Layout>
       <Container>
       <ToastContainer 
-        position="top-right"
+        position="bottom-right"
         style={toastStyles.container}
       />
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" minHeight="80vh">

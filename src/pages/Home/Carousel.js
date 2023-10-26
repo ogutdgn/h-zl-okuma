@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import carousel1 from "../../assets/imgs/book1.jpeg";
 import carousel2 from "../../assets/imgs/book2.jpeg";
 import carousel3 from "../../assets/imgs/book3.jpeg";
+import { useMediaQuery } from "@mui/material";
 
 const slideStyles = {
   width: "100%",
@@ -16,22 +17,7 @@ const slideStyles = {
   left: 0
 };
 
-const slideTextStyle = {
-  fontFamily: "'Playfair Display', serif",
-  color: "#fff",
-  fontSize: "50px",  // Increase font size for prominence
-  fontWeight: "bold",  // Bold text for emphasis
-  letterSpacing: "2px",  // Spacing between letters for a more aesthetic look
-  textTransform: "uppercase",  // Convert text to uppercase
-  textAlign: "center",
-  position: "absolute",
-  top: "50%",  // Center vertically
-  left: "50%",  // Center horizontally
-  transform: "translate(-50%, -50%)",  // Adjust to truly center the text
-  backdropFilter: "blur(6px)",  // Optional: Add a blur effect for readability
-  padding: "10px 20px",  // Some padding around the text
-  width: "90%"
-};
+
 
 const rightArrowStyles = {
   position: "absolute",
@@ -73,6 +59,25 @@ const dotStyle = {
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = useMediaQuery('(max-width:500px)');
+
+  const slideTextStyle = {
+    fontFamily: "'Playfair Display', serif",
+    color: "#fff",
+    fontSize: isMobile ? "20px" : "50px",  // Increase font size for prominence
+    fontWeight: "bold",  // Bold text for emphasis
+    letterSpacing: "2px",  // Spacing between letters for a more aesthetic look
+    textTransform: "uppercase",  // Convert text to uppercase
+    textAlign: "center",
+    position: "absolute",
+    top: "50%",  // Center vertically
+    left: "50%",  // Center horizontally
+    transform: "translate(-50%, -50%)",  // Adjust to truly center the text
+    backdropFilter: "blur(5px)",  // Optional: Add a blur effect for readability
+    padding: "10px 20px",  // Some padding around the text
+    width: "80%",
+    // height: "50%",
+  };
 
   const slides = [
     { src: carousel1, title: "beach", text: "Boost Your Reading Speed and Comprehension Now!" },

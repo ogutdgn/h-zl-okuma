@@ -12,7 +12,7 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [subRoutesOpen, setSubRoutesOpen] = useState(false);
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:850px)');
 
   const location = useLocation();
   const navigate = useNavigate();
