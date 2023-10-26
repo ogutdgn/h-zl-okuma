@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Layout from '../../components/Layout/Layout';
 import { Button, TextField, Box, Container, Typography, Paper, Grid } from '@mui/material';
-import contactUsImg from "../../assets/imgs/contact-us-img.jpg";
+import contactUsImg from "../../assets/imgs/contact.jpeg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

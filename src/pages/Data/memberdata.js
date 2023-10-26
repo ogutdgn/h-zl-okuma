@@ -9,25 +9,25 @@ import yagi from "../../assets/teamMembers/yagi.jpeg";
 const MemberList = [
     // Co-founders
     {
-      image: dogan,
+      img: dogan,
       name: "DOGAN OGUT",
       title: "Co-Founder - Software Developer",
       socialLinks: [
         { icon: 'LinkedIn', url: 'https://www.linkedin.com/in/doganogut/' },
-        { icon: 'MailOutline', url: 'cofounder1@example.com' },
+        { icon: 'MailOutline', url: 'ogutdgn@gmail.com' },
       ]
     },
     {
-      image: serdar,
+      img: serdar,
       name: "SERDAR SAGIR",
       title: "Co-Founder - Content Developer",
       socialLinks: [
         { icon: 'LinkedIn', url: 'https://www.linkedin.com/in/serdar-bozan/' },
-        { icon: 'MailOutline', url: 'cofounder2@example.com' },
+        { icon: 'MailOutline', url: 'serdarbozans@gmail.com' },
       ]
     },
     {
-      image: emre,
+      img: emre,
       name: "EMRE BALABAN",
       title: "Advisor",
       socialLinks: [
@@ -36,7 +36,7 @@ const MemberList = [
       ]
     },
     {
-      image: levo,
+      img: levo,
       name: "LEVEND OZEN",
       title: "Social Media Manager",
       socialLinks: [
@@ -45,7 +45,7 @@ const MemberList = [
       ]
     },
     {
-      image: yagi,
+      img: yagi,
       name: "YAGIZ OZDOGRU",
       title: "Blogger",
       socialLinks: [
@@ -54,7 +54,7 @@ const MemberList = [
       ]
     },
     {
-      image: baho,
+      img : baho,
       name: "EMRE BIRER",
       title: "Blogger",
       socialLinks: [

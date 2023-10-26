@@ -23,7 +23,7 @@ const socialIconComponents = {
         <Box display={isMobile ? 'block' : (isCoFounder ? 'flex' : 'block')}>
           <Avatar
             alt={user.name}
-            src={user.image}
+            src={user.img}
             sx={{
               width: 160,
               height: 160,

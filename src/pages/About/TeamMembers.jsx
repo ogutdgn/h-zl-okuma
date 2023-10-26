@@ -4,7 +4,7 @@ import {
   Box,
 } from '@mui/material';
 import MemberCard from './MemberCard';
-import MemberList from './MemberList';
+import MemberList from '../Data/memberdata';
 
 
 const TeamMembers = () => {

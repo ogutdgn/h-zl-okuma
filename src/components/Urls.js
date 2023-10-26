@@ -31,8 +31,8 @@ const routes = [
     name: "Contact",
   },
   {
-    path: "/services",
-    name: "Services",
+    path: "/blogs",
+    name: "Blogs",
   },
   {
     path: "/exercise",

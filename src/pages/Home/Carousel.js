@@ -17,7 +17,15 @@ const slideStyles = {
   left: 0
 };
 
-
+const carouselContainerStyles = {
+  // Viewport'un yüzde 90'ı kadar genişlik
+  display: "flex", 
+  justifyContent: "center", 
+  position: "relative", 
+  height: "480px", 
+  margin: "20px", 
+  width: "90%"
+};
 
 const rightArrowStyles = {
   position: "absolute",
@@ -75,7 +83,7 @@ const Carousel = () => {
     transform: "translate(-50%, -50%)",  // Adjust to truly center the text
     backdropFilter: "blur(5px)",  // Optional: Add a blur effect for readability
     padding: "10px 20px",  // Some padding around the text
-    width: "80%",
+    width: "90%",
     // height: "50%",
   };
 
@@ -94,7 +102,7 @@ const Carousel = () => {
   }, [currentIndex, slides.length]);
 
   return (
-    <div style={{display: "flex", justifyContent: "center", position: "relative", height: "480px", margin: "20px", width: "90%"}}>
+    <div style={carouselContainerStyles}>
       <div onClick={() => {
           const newIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
           setCurrentIndex(newIndex);
