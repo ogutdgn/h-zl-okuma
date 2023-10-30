@@ -4,6 +4,8 @@ import emre from "../../assets/teamMembers/emre.png";
 import baho from "../../assets/teamMembers/baho.jpeg";
 import levo from "../../assets/teamMembers/levo.jpeg";
 import yagi from "../../assets/teamMembers/yagi.jpeg";
+import akcan from "../../assets/teamMembers/akcan.jpeg";
+
 
 
 const MemberList = [
@@ -24,6 +26,15 @@ const MemberList = [
       socialLinks: [
         { icon: 'LinkedIn', url: 'https://www.linkedin.com/in/serdar-bozan/' },
         { icon: 'MailOutline', url: 'serdarbozans@gmail.com' },
+      ]
+    },
+    {
+      img: akcan,
+      name: "AKCAN OZDABAN",
+      title: "Mentor",
+      socialLinks: [
+        { icon: 'LinkedIn', url: 'https://www.linkedin.com/' },
+        { icon: 'MailOutline', url: 'akcan4u@gmail.com' },
       ]
     },
     {
