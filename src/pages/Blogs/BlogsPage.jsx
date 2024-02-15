@@ -5,7 +5,9 @@ import Layout from '../../components/Layout/Layout';
 const BlogsPage = () => {
   return (
     <Layout>
-      <BlogsList />
+      <div style={{ paddingTop: "15vh" }} >
+        <BlogsList />
+      </div>
     </Layout>
   );
 };

@@ -76,12 +76,12 @@ export const Contact = () => {
 
   return (
     <Layout>
-      <Container>
+      <Container sx={{ paddingTop: "15vh" }}>
       <ToastContainer 
         position="bottom-right"
         style={toastStyles.container}
       />
-        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" minHeight="80vh">
+        <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" minHeight="85vh">
           <Typography variant="h4" gutterBottom>Contact Us</Typography>
           <Paper elevation={3} style={{ padding: '20px', width: '100%' }}>
             <Grid container spacing={3}>

@@ -4,7 +4,8 @@ import routes from '../Urls';
 import { AppBar, Toolbar, Button, Menu, MenuItem, Drawer, List, ListItem, IconButton, useMediaQuery } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from "../../assets/logos/swiftReaders-logo.jpeg";
+import logo1 from "../../assets/logos/swift-readers-logo1.png";
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -49,7 +50,6 @@ const Header = () => {
                                 <List component="div" disablePadding>
                                     {route.subRoutes.map((subRoute) => (
                                         <ListItem
-                                            button
                                             key={subRoute.path}
                                             component={NavLink}
                                             to={subRoute.path}
@@ -70,7 +70,6 @@ const Header = () => {
                 } else {
                     return (
                         <ListItem 
-                            button 
                             key={route.path} 
                             component={NavLink} 
                             to={route.path} 
@@ -91,21 +90,22 @@ const Header = () => {
 
 
   return (
-    <AppBar position="static" sx={{ marginBottom: '20px', backgroundColor: '#f7f7f7' }}>
-      <Toolbar sx={{ padding: "30px" }}>
-        <div style={{ flexGrow: 1, cursor: "pointer" }} onClick={() => navigate("/")}>
-          <img src={logo} height="100px" alt="logo" />
-        </div>
-        {isMobile ? (
-          <>
-            <IconButton edge="end" aria-label="menu" onClick={toggleDrawer(true)} sx={{ color: 'black' }}>
-              <MenuIcon sx={{ color: 'black' }} />
-            </IconButton>
-            <Drawer anchor="right" open={mobileOpen} onClose={toggleDrawer(false)}>
-              {list()}
-            </Drawer>
-          </>
-        ) : (
+    <AppBar position="fixed" sx={{ backgroundColor: '#f7f7f7', maxHeight: '15vh' }}>
+  <Toolbar sx={{ padding: "30px", justifyContent: "space-between", minHeight: '15vh', alignItems: 'center' }}>
+    <div style={{ flexGrow: 1, cursor: "pointer" }} onClick={() => navigate("/")}>
+      <img src={logo1} style={{  height: '5vh' }} alt="logo" />
+      {/* <h3 style={{ color: "black" }}>SWIFT READERS</h3> */}
+    </div>
+    {isMobile ? (
+      <>
+        <IconButton edge="end" aria-label="menu" onClick={toggleDrawer(true)} sx={{ color: 'black' }}>
+          <MenuIcon sx={{ color: 'black' }} />
+        </IconButton>
+        <Drawer anchor="right" open={mobileOpen} onClose={toggleDrawer(false)}>
+          {list()}
+        </Drawer>
+      </>
+    ) : (
           routes.map((route) => {
             if (route.subRoutes) {
               return (
@@ -114,7 +114,7 @@ const Header = () => {
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     onMouseEnter={e => setAnchorEl(e.currentTarget)}
-                    sx={{ color: 'black', backgroundColor: '#f7f7f7', '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" } }}
+                    sx={{ color: 'black', backgroundColor: '#f7f7f7', '&:hover': { backgroundColor: '#f7f7f7', fontWeight: "bold" } }}
                     className='button-hover'
                   >
                     {route.name}
@@ -135,7 +135,7 @@ const Header = () => {
                           to={subRoute.path}
                           sx={{ 
                               color: 'black',
-                              '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" },
+                              '&:hover': { backgroundColor: 'white', fontWeight: "bold", color: "black" },
                               '&.active': { backgroundColor: '#1664c0', color: 'white', fontWeight: 'bold' },
                               '&.active:hover': { backgroundColor: '#1664c0', color: 'white' }
                           }}
@@ -165,10 +165,9 @@ const Header = () => {
                             color: 'black', 
                             backgroundColor: '#f7f7f7',
                             marginRight: "20px", 
-                            padding: "15px",
+                            padding: "10px",
                             width: 100,
-                            borderRadius: "50px", 
-                            '&:hover': { backgroundColor: '#71a0d6', color: 'white', fontWeight: "bold" },
+                            '&:hover': { backgroundColor: '#f7f7f7', fontWeight: "bold" },
                             '&.active': { backgroundColor: '#1664c0', color: 'white', fontWeight: 'bold' },
                             '&.active:hover': { backgroundColor: '#1664c0', color: 'white' }
                         }} 

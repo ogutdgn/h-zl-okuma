@@ -101,7 +101,7 @@ function Exercise2() {
 
     return (
         <Layout>
-        <Container style={{ display: 'flex', flexDirection: 'column',  justifyContent: 'space-around', height: "100%" }}>
+        <Container style={{ display: 'flex', flexDirection: 'column',  justifyContent: 'space-around', height: "100%", paddingTop: "15vh" }}>
 
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
         

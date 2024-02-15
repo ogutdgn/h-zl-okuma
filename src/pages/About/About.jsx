@@ -6,8 +6,10 @@ import AboutDescripton from './AboutDescripton.jsx';
 const About = () => {
   return (
     <Layout>
-      <AboutDescripton/>
-      <TeamMembers/>
+      <div style={{ paddingTop: "15vh" }}>
+        <AboutDescripton/>
+        <TeamMembers/>
+      </div>
     </Layout>
   )
 }

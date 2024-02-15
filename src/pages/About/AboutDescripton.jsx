@@ -11,7 +11,7 @@ const AboutDescription = () => {
     <Container maxWidth="lg">
       <Box p={2}>
 
-        <Grid container spacing={3} alignItems="center" style={{ marginBottom: '10em', marginTop: "1em" }}>
+        <Grid container spacing={3} alignItems="center" textAlign="left" style={{ marginBottom: '10em', marginTop: "1em" }}>
           <Grid item xs={12} md={6}>
             <img
               src={img1} 
@@ -29,7 +29,7 @@ const AboutDescription = () => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={3} alignItems="center">
+        <Grid container spacing={3} alignItems="center" textAlign="left">
           <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
             <Typography variant="h3" gutterBottom style={{ marginBottom: '1em' }}>
               Our Vision

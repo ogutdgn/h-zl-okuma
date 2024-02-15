@@ -30,7 +30,7 @@ const ReadingTest = () => {
 
     return (
         <Layout>
-            <Box margin={2} textAlign="left">
+            <Box margin={2} textAlign="left" sx={{ paddingTop: "15vh" }}>
                 <Typography variant="subtitle1" gutterBottom>
                     <i><b>Note: </b>Start the counter and read the text you entered. When you finish, find out how many words per minute you read.</i>
                 </Typography>

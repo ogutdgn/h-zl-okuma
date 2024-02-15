@@ -127,26 +127,6 @@ body{
   margin-left: 130px;
 }
 
-::-webkit-scrollbar{
-  width: 10px;
-}
 
-::-webkit-scrollbar-track{
-  background-color: #b7b7b7;
-}
-
-::-webkit-scrollbar-thumb{
-  background-color: #777;
-  height: 100px;
-  border-radius: 25px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-  background-color: #b7b7b7;
-}
-
-.pieChart{
-  margin-top: 50px;
-}
 
 

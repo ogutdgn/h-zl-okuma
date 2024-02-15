@@ -1,0 +1,24 @@
+.custom-button {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1rem;
+    color: #f7f7f7;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ff9100;
+    background-image: linear-gradient(to right, #1664c0 50%, #ff9100 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.3s ease;
+    display: inline-block; /* transform uygulamak için gerekli */
+  }
+  
+  .custom-button:hover {
+    color: #fff;
+    background-position: left bottom;
+    font-weight: bold;
+    transform: scale(1.05); /* Butonu %5 oranında büyüt */
+  }
+  
