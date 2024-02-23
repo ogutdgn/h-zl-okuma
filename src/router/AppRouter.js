@@ -1,4 +1,3 @@
-import "./AppRouter.css"
 import {
     BrowserRouter,
     Routes,
@@ -6,7 +5,6 @@ import {
   } from "react-router-dom";
 
 import React from 'react';
-// import Home from "../pages/Home/Home";
 import ReadingTest from "../pages/ReadingTest/ReadingTest";
 import ReadingExercise from "../pages/ReadingExercise/ReadingExercise";
 import Exercise2 from "../pages/ReadingExercise/Exercise2";
@@ -20,9 +18,6 @@ import BlogsPage from "../pages/Blogs/BlogsPage";
 
 
 const AppRouter = () => {
-  // if(window.location.pathname === "/"){
-  //   window.location.pathname = "/anasayfa";
-  // }
   return (
     <div>
         <BrowserRouter>
